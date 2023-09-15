@@ -1,0 +1,13 @@
+.post {
+  padding: 1rem;
+  border: 1px solid gray;
+}
+
+.post-section {
+  padding-top: 1rem;
+}
+
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}

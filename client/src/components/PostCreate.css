@@ -1,0 +1,9 @@
+.post-create {
+  padding-bottom: 1rem;
+}
+
+.post-create label {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+}
