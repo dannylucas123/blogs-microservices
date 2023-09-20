@@ -1,6 +1,7 @@
 .post {
   padding: 1rem;
   border: 1px solid gray;
+  max-width: 400px;
 }
 
 .post-section {

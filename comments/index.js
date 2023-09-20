@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import {v4} from 'uuid';
+import axios from 'axios';
 import bodyParser from 'body-parser';
 
 const app = express();
@@ -21,8 +22,22 @@ app.post('/posts/:id/comments', (req, res) => {
   ref.push(comment);
   comments[req.params.id] = ref;
 
+  axios.post('http://localhost:4005/events', {
+    type: 'CommentCreated',
+    data: {
+      postId: req.params.id,
+      ...comment
+    }
+  }).catch(() => {
+    console.log('oopsie');
+  });
+
   res.status = 201;
   res.json(comment);
+});
+
+app.post('/events', (req, res) => {
+  console.log('Received event: %s', req.body);
 });
 
 app.listen(4001, () => {
