@@ -14,7 +14,6 @@ export const CommentList = ({comments}: {comments: Comment[]}) => {
             {comment.status === 'pending' && <li key={comment.id}>Comment awaiting moderation</li>}
             {comment.status === 'rejected' && <li key={comment.id}>Comment Rejected</li>}
             {comment.status === 'approved' && <li key={comment.id}>{comment.content}</li>}
-
           </>
         ))}
       </ul>
