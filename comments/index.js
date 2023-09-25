@@ -21,7 +21,7 @@ app.post('/events', async (req, res) => {
   if (type === 'CommentModerated') {
     comments[data.postId].splice(comments[data.postId].findIndex(e => e.id === data.id), 1, data);
 
-    await axios.post('http://localhost:4005/events', {type: 'CommentUpdated', data});
+    await axios.post('http://event-bus-srv:4005/events', {type: 'CommentUpdated', data});
   }
 
   res.send({});
@@ -34,7 +34,7 @@ app.post('/posts/:id/comments', async (req, res) => {
   ref.push(comment);
   comments[req.params.id] = ref;
 
-  await axios.post('http://localhost:4005/events', {
+  await axios.post('http://event-bus-srv:4005/events', {
     type: 'CommentCreated',
     data: {
       postId: req.params.id,

@@ -8,7 +8,7 @@ export const CommentCreate = ({id}: {id: string}) => {
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    await axios.post(`http://localhost:4001/posts/${id}/comments`, {content});
+    await axios.post(`http://posts-udemy.com/posts/${id}/comments`, {content});
   }
 
   return (

@@ -8,7 +8,7 @@ export const PostCreate = () => {
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    await axios.post('http://localhost:4000/posts', {title});
+    await axios.post('http://posts-udemy.com/posts/create', {title});
   }
 
   return (

@@ -27,7 +27,7 @@ export const PostList = () => {
 
   useEffect(() => {
     const getPosts = async () => {
-      const list = await axios.get('http://localhost:4002/posts');
+      const list = await axios.get('http://posts-udemy.com/posts');
       setPosts(list.data);
     }
     

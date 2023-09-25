@@ -5,7 +5,7 @@ interface Comment {
 }
 
 export const CommentList = ({comments}: {comments: Comment[]}) => {
-  return comments.length > 0 && (
+  return comments && comments.length > 0 && (
     <div>
       {comments.length} comments
       <ul>
@@ -19,5 +19,4 @@ export const CommentList = ({comments}: {comments: Comment[]}) => {
       </ul>
     </div>
   )
-  
 }

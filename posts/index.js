@@ -15,7 +15,7 @@ app.get('/posts', (req, res) => {
   res.send(posts);
 });
 
-app.post('/posts', (req, res) => {
+app.post('/posts/create', (req, res) => {
   const post = {};
   const id = v4();
   post.id = id
@@ -23,7 +23,7 @@ app.post('/posts', (req, res) => {
 
   posts[id] = post;
 
-  axios.post('http://localhost:4005/events', {type: 'PostCreated', data: {...post}}).catch(console.log)
+  axios.post('http://event-bus-srv:4005/events', {type: 'PostCreated', data: {...post}}).catch(console.log)
   res.status = 201;
   res.json(post);
 });
