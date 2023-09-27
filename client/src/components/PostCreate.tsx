@@ -13,7 +13,7 @@ export const PostCreate = () => {
 
   return (
     <form className="post-create" onSubmit={onSubmit}>
-      <h1>Create Post</h1>
+      <h1>Create Post!!!!</h1>
       <label>
         Title
         <input value={title} onChange={e => setTitle(e.target.value)}/>
